@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    assignees:
+      - redeboer
+    labels:
+      - 🖱️ DX
+    schedule:
+      interval: monthly
