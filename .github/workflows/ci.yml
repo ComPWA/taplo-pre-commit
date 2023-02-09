@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  schedule:
+    - cron: "50 1 * * */7"
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Upgrade hook
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - run: pip install pre-commit-mirror-maker
+      - run: git config user.name 'Github Actions'
+      - run: git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - run: |
+          pre-commit-mirror . \
+            --description="A TOML toolkit written in Rust" \
+            --entry="taplo format" \
+            --id=taplo \
+            --language=rust \
+            --package-name=taplo-cli \
+            --types=toml
+      - run: |
+          git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY
+          git push origin HEAD:refs/heads/main --tags
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
