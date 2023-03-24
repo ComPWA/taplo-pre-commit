@@ -12,7 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-      - run: pip install pre-commit-mirror-maker
+        with:
+          python-version: "3.8"
+      - run: pip install -r requirements.txt
       - run: git config user.name 'Github Actions'
       - run: git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
       - run: |
@@ -24,7 +26,13 @@ jobs:
             --package-name=taplo-cli \
             --types=toml
       - run: |
-          git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY
-          git push origin HEAD:refs/heads/main --tags
+          git rebase --exec 'python3 update_hook_version.py && git commit --all --amend --no-edit && git tag v$(cat .version) --force'
+      - run: |
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
+          for tag in $(git tag); do
+            git push origin $tag
+          done
+          git push origin HEAD:refs/heads/main
+        # for-loop is required to trigger CI on the tags
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
