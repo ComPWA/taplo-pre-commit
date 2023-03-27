@@ -1,5 +1,5 @@
 repos:
   - repo: https://github.com/ComPWA/mirrors-taplo
-    rev: v0.6.10
+    rev: v0.7.0
     hooks:
       - id: taplo
