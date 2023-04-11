@@ -1,20 +1,11 @@
--   id: taplo
+  - id: taplo
     name: taplo-cli
-    description: 'A TOML toolkit written in Rust'
+    description: "A TOML toolkit written in Rust"
     entry: taplo format
     language: rust
-    'types': [toml]
+    types: [toml]
     args: []
     require_serial: false
-    additional_dependencies: ["cli:taplo-cli:0.8.0"]
-    minimum_pre_commit_version: '0'
+    additional_dependencies: ["cli:taplo-cli:0.1.0"]
+    minimum_pre_commit_version: "0"
 
--   id: taplo-docker
-    name: taplo-cli-docker
-    description: 'A TOML toolkit written in Rust'
-    entry: tamasfe/taplo:0.8.0
-    language: docker_image
-    'types': [toml]
-    args: [format]
-    require_serial: false
-    minimum_pre_commit_version: '0'
