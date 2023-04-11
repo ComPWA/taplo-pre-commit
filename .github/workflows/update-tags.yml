@@ -2,7 +2,7 @@ name: CI
 
 on:
   schedule:
-    - cron: "50 1 * * */7"
+    - cron: "50 1 * * 1"
   workflow_dispatch:
 
 jobs:
@@ -17,16 +17,7 @@ jobs:
       - run: pip install -r requirements.txt
       - run: git config user.name 'Github Actions'
       - run: git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-      - run: |
-          pre-commit-mirror . \
-            --description="A TOML toolkit written in Rust" \
-            --entry="taplo format" \
-            --id=taplo \
-            --language=rust \
-            --package-name=taplo-cli \
-            --types=toml
-      - run: |
-          git rebase --exec 'python3 update_hook_version.py && git commit --all --amend --no-edit && git tag v$(cat .version) --force'
+      - run: python3 .github/workflows/update_tags.py
       - run: |
           git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
           for tag in $(git tag); do
