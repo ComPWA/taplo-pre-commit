@@ -1,6 +1,6 @@
 # Taplo mirror
 
-Mirror of [Taplo](https://github.com/tamasfe/taplo) for [pre-commit](https://pre-commit.com), created with [`pre-commit-mirror-maker`](https://github.com/pre-commit/pre-commit-mirror-maker) (see [this workflow](./.github/workflows/ci.yml)).
+Mirror of [Taplo](https://github.com/tamasfe/taplo) for [pre-commit](https://pre-commit.com), created with a modified version of [`pre-commit-mirror-maker`](https://github.com/pre-commit/pre-commit-mirror-maker) (see [this workflow](./.github/workflows/update-tags.yml)).
 
 ### Using Taplo with pre-commit
 
