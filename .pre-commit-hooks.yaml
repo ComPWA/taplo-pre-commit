@@ -6,13 +6,13 @@
     types: [toml]
     args: []
     require_serial: false
-    additional_dependencies: ["cli:taplo-cli:0.6.7"]
+    additional_dependencies: ["cli:taplo-cli:0.6.8"]
     minimum_pre_commit_version: "0"
 
   - id: taplo-docker
     name: taplo-cli-docker
     description: "A TOML toolkit written in Rust"
-    entry: tamasfe/taplo:0.6.7
+    entry: tamasfe/taplo:0.6.8
     language: docker_image
     types: [toml]
     args: [format]
