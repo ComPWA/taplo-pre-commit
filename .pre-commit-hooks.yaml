@@ -6,6 +6,6 @@
     types: [toml]
     args: []
     require_serial: false
-    additional_dependencies: ["cli:taplo-cli:0.4.0"]
+    additional_dependencies: ["cli:taplo-cli:0.4.1"]
     minimum_pre_commit_version: "0"
 
