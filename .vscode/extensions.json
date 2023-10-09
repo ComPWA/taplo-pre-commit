@@ -1,8 +1,15 @@
 {
   "recommendations": [
+    "esbenp.prettier-vscode",
+    "garaioag.garaio-vscode-unwanted-recommendations",
     "github.vscode-github-actions",
     "ms-azuretools.vscode-docker",
     "ms-python.python",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "stkb.rewrap"
+  ],
+  "unwantedRecommendations": [
+    "davidanson.vscode-markdownlint",
+    "travisillig.vscode-json-stable-stringify"
   ]
 }
