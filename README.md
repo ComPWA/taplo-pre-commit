@@ -44,8 +44,6 @@ pre-commit autoupdate --repo https://github.com/ComPWA/mirrors-taplo
 
 Since it can take a several minutes to install the `taplo` hook, this repository also [provides a Docker container](https://github.com/ComPWA/mirrors-taplo/pkgs/container/mirrors-taplo) with caches for the `taplo` pre-commit hook for each tag. Here's an example of how to use this container in your GitHub Actions:
 
-name: CI-taplo
-
 ```yaml
 on:
   pull_request:
