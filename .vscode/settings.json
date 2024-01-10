@@ -3,7 +3,9 @@
     "editor.rulers": [72],
     "rewrap.wrappingColumn": 72
   },
+  "diffEditor.experimental.showMoves": true,
   "editor.formatOnSave": true,
   "github-actions.workflows.pinned.workflows": [".github/workflows/ci.yml"],
+  "multiDiffEditor.experimental.enabled": true,
   "rewrap.wrappingColumn": 88
 }

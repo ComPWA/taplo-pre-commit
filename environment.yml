@@ -4,3 +4,5 @@ dependencies:
   - pip
   - pip:
       - -r requirements.txt
+variables:
+  PRETTIER_LEGACY_CLI: "1"
