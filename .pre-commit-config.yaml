@@ -24,7 +24,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/ComPWA/repo-maintenance
-    rev: 0.1.0
+    rev: 0.1.13a2
     hooks:
       - id: check-dev-files
         args:
@@ -37,7 +37,7 @@ repos:
           - --repo-name=mirrors-taplo
 
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.0.3
+    rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
 
