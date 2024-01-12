@@ -1,15 +1,17 @@
 {
   "recommendations": [
     "esbenp.prettier-vscode",
-    "garaioag.garaio-vscode-unwanted-recommendations",
     "github.vscode-github-actions",
     "ms-azuretools.vscode-docker",
     "ms-python.python",
     "redhat.vscode-yaml",
+    "Soulcode.vscode-unwanted-extensions",
     "stkb.rewrap"
   ],
   "unwantedRecommendations": [
     "davidanson.vscode-markdownlint",
+    "garaioag.garaio-vscode-unwanted-recommendations",
+    "streetsidesoftware.code-spell-checker",
     "travisillig.vscode-json-stable-stringify"
   ]
 }
