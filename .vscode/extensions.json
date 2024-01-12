@@ -11,6 +11,7 @@
   "unwantedRecommendations": [
     "davidanson.vscode-markdownlint",
     "garaioag.garaio-vscode-unwanted-recommendations",
+    "streetsidesoftware.code-spell-checker",
     "travisillig.vscode-json-stable-stringify"
   ]
 }

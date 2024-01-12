@@ -24,8 +24,8 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
 
-  - repo: https://github.com/ComPWA/repo-maintenance
-    rev: 0.1.13a6
+  - repo: https://github.com/ComPWA/policy
+    rev: 0.2.0
     hooks:
       - id: check-dev-files
         args:
