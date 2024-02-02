@@ -4,6 +4,7 @@ RUN apt-get update \
    && apt-get install -y \
    curl \
    git \
+   pkg-config \
    python3-pip \
    && apt-get autoclean -y \
    && apt-get autoremove -y \
