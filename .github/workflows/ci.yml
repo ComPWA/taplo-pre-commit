@@ -1,33 +1,36 @@
 name: CI
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
-env:
-  PYTHONHASHSEED: "0"
-
 on:
-  push:
-    branches:
-      - main
-      - epic/*
-      - "[0-9]+.[0-9]+.x"
-  pull_request:
-    branches:
-      - main
-      - epic/*
-      - "[0-9]+.[0-9]+.x"
+  schedule:
+    - cron: "50 1 * * 1"
   workflow_dispatch:
-    inputs:
-      specific-pip-packages:
-        description: Run CI with specific pip packages
-        required: false
-        type: string
 
 jobs:
-  style:
-    if: inputs.specific-pip-packages == ''
-    secrets:
-      token: ${{ secrets.PAT }}
-    uses: ComPWA/actions/.github/workflows/pre-commit.yml@v1
+  update:
+    name: Upgrade hook
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+      - run: pip install pre-commit-mirror-maker
+      - run: git config user.name 'Github Actions'
+      - run: git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - run: |
+          pre-commit-mirror . \ 
+            --description="A TOML toolkit written in Rust" \
+            --entry="taplo format" \
+            --id=taplo \
+            --language=python \
+            --package-name=taplo \
+            --types=toml
+      - run: |
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
+          for tag in $(git tag); do
+            git push origin $tag
+          done
+          git push origin HEAD:refs/heads/main
+        # for-loop is required to trigger CI on the tags
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
