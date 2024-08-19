@@ -1,11 +1,22 @@
-  - id: taplo
-    name: taplo-cli
-    description: "A TOML toolkit written in Rust"
+  - id: taplo-format
+    alias: taplo
+    name: taplo-format
+    description: Format TOML documents
     entry: taplo format
-    language: rust
+    language: python
     types: [toml]
     args: []
     require_serial: false
-    additional_dependencies: ["cli:taplo-cli:0.9.0"]
+    additional_dependencies: []
     minimum_pre_commit_version: "0"
 
+  - id: taplo-lint
+    name: taplo-lint
+    description: Lint TOML documents
+    entry: taplo lint
+    language: python
+    types: [toml]
+    args: [--default-schema-catalogs]
+    require_serial: false
+    additional_dependencies: []
+    minimum_pre_commit_version: "0"
