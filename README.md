@@ -11,11 +11,22 @@ repos:
   - repo: https://github.com/ComPWA/mirrors-taplo
     rev: ""
     hooks:
-      - id: taplo
+      - id: taplo-format
 ```
 
 then run
 
 ```shell
 pre-commit autoupdate --repo https://github.com/ComPWA/mirrors-taplo
+```
+
+Optionally, you can also install the Taplo linter as a pre-commit hook:
+
+```yaml
+repos:
+  - repo: https://github.com/ComPWA/mirrors-taplo
+    rev: ""
+    hooks:
+      - id: taplo-format
+      - id: taplo-lint
 ```
