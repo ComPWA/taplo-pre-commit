@@ -14,7 +14,7 @@ repos:
       - id: taplo-format
 ```
 
-To get the [latest release](https://github.com/ComPWA/mirrors-taplo/releases), run
+To get the [latest release](https://github.com/ComPWA/taplo-pre-commit/releases), run
 
 ```shell
 pre-commit autoupdate --repo https://github.com/ComPWA/taplo-pre-commit
