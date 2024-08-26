@@ -1,6 +1,6 @@
-# Taplo TOML formatter mirror
+# Pre-commit hook for the Taplo TOML formatter
 
-Mirror of [ComPWA/taplo](https://github.com/ComPWA/taplo) (which is a PyPI fork of Mirror of [tamasfe/taplo](https://github.com/tamasfe/taplo)) for [pre-commit](https://pre-commit.com), created with a modified version of [`pre-commit-mirror-maker`](https://github.com/pre-commit/pre-commit-mirror-maker) (see [this workflow](./.github/workflows/update-tags.yml)).
+Mirror of [tamasfe/taplo](https://github.com/tamasfe/taplo) and the [`taplo` PyPI package](https://pypi.org/project/taplo) for [pre-commit](https://pre-commit.com).
 
 ### Using Taplo with pre-commit
 
@@ -8,24 +8,24 @@ Add this to your `.pre-commit-config.yaml`
 
 ```yaml
 repos:
-  - repo: https://github.com/ComPWA/mirrors-taplo
-    rev: ""
+  - repo: https://github.com/ComPWA/taplo-pre-commit
+    rev: v0.9.3
     hooks:
       - id: taplo-format
 ```
 
-then run
+To get the [latest release](https://github.com/ComPWA/mirrors-taplo/releases), run
 
 ```shell
-pre-commit autoupdate --repo https://github.com/ComPWA/mirrors-taplo
+pre-commit autoupdate --repo https://github.com/ComPWA/taplo-pre-commit
 ```
 
 Optionally, you can also install the Taplo linter as a pre-commit hook:
 
 ```yaml
 repos:
-  - repo: https://github.com/ComPWA/mirrors-taplo
-    rev: ""
+  - repo: https://github.com/ComPWA/taplo-pre-commit
+    rev: v0.9.3
     hooks:
       - id: taplo-format
       - id: taplo-lint
