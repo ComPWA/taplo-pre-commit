@@ -14,17 +14,11 @@ jobs:
         with:
           fetch-depth: 0
       - uses: actions/setup-python@v5
-      - run: pip install pre-commit-mirror-maker
+      - name: Set up uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
       - run: git config user.name 'Github Actions'
       - run: git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-      - run: |
-          pre-commit-mirror . \ 
-            --description="A TOML toolkit written in Rust" \
-            --entry="taplo format" \
-            --id=taplo \
-            --language=python \
-            --package-name=taplo \
-            --types=toml
+      - run: uv run --no-project .github/workflows/update.py
       - run: |
           git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
           for tag in $(git tag); do
