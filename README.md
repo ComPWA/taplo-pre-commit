@@ -1,6 +1,6 @@
 # Pre-commit hook for the Taplo TOML formatter
 
-Mirror of [tamasfe/taplo](https://github.com/tamasfe/taplo) and the [`taplo` PyPI package](https://pypi.org/project/taplo) for [pre-commit](https://pre-commit.com).
+Mirror of [github.com/tamasfe/taplo](https://github.com/tamasfe/taplo) and the [`taplo` PyPI package](https://pypi.org/project/taplo) for [pre-commit](https://pre-commit.com).
 
 ### Using Taplo with pre-commit
 
