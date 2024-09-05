@@ -87,7 +87,7 @@ def _replace_in_readme(current_tag: str, new_tag: str) -> None:
 
 def stage_commit_and_tag(tag: str) -> None:
     git("add", "pyproject.toml", "README.md")
-    git("commit", "-m", f"MAINT: upgrade to to taplo {tag}")
+    git("commit", "-m", f"MAINT: upgrade to taplo {tag}")
     git("tag", tag)
 
 
