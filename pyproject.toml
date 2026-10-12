@@ -3,3 +3,6 @@ dependencies = ["taplo==0.9.3"]
 name = "pre_commit_placeholder_package"
 requires-python = ">=3.8"
 version = "0.0.0"
+
+[project.scripts]
+cached-taplo-lint = "cached_taplo_lint:main"
