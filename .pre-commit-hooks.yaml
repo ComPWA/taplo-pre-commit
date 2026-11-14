@@ -13,7 +13,7 @@
   - id: taplo-lint
     name: taplo-lint
     description: Lint TOML documents
-    entry: taplo lint
+    entry: cached-taplo-lint
     language: python
     types: [toml]
     args: [--default-schema-catalogs]
